@@ -12,8 +12,8 @@ entity "顧客マスタ" as customer <m_customers>
  reg_date
 }
 
-entity "購入テーブル" as table <d_purchase>
-<<T,MASTER_MARK_COLOR>>{
+entity "購入テーブル" as purchase <d_purchase>
+<<T,TRANSACTION_MARK_COLOR>>{
 +order_id[PK]
 --
 +customer_code[FK]
@@ -21,8 +21,8 @@ purchase_date
 total_price
 }
 
-entity "購入詳細テーブル" as table <d_purchase_date>
-<<T,MASTER_MARK_COLOR>>{
+entity "購入詳細テーブル" as purchase_detail <d_purchase_date>
+<<T,TRANSACTION_MARK_COLOR>>{
 +order_id[PK]
 +detail_id[PK]
 --
@@ -31,7 +31,7 @@ price
 num
 }
 
-entity "商品マスタ" as customer <m_items>
+entity "商品マスタ" as product <m_items>
 <<M,MASTER_MARK_COLOR>>{
 +item_code[PK]
 --
@@ -44,7 +44,7 @@ del_flag
 reg_date
 }
 
-entity "カテゴリマスタ" as customer <m_category>
+entity "カテゴリマスタ" as category <m_category>
 <<M,MASTER_MARK_COLOR>>{
 +category_ic[PK]
 --
