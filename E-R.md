@@ -1,7 +1,8 @@
 ```puml
 @startuml
-entity "顧客マスタ" as customer <m_customers>
-<<M,MASTER_MARK_COLOR>>{
+package "" as target_system{
+
+entity "顧客マスタ"<m_customers><<M,DDAA00>>{
  +customer_code[PK]
  --
  pass
@@ -13,8 +14,7 @@ entity "顧客マスタ" as customer <m_customers>
  reg_date
 }
 
-entity "購入テーブル" as purchase <d_purchase>
-<<T,TRANSACTION_MARK_COLOR>>{
+entity "購入テーブル"<d_purchase><<T,00AADD>>{
 +order_id[PK]
 --
 +customer_code[FK]
@@ -22,8 +22,7 @@ purchase_date
 total_price
 }
 
-entity "購入詳細テーブル" as purchase_detail <d_purchase_date>
-<<T,TRANSACTION_MARK_COLOR>>{
+entity "購入詳細テーブル"<d_purchase_date><<T,00AADD>>{
 +order_id[PK]
 +detail_id[PK]
 --
@@ -32,8 +31,7 @@ price
 num
 }
 
-entity "商品マスタ" as product <m_items>
-<<M,MASTER_MARK_COLOR>>{
+entity "商品マスタ"<m_items><<M,DDAA00>>{
 +item_code[PK]
 --
 item_name
@@ -45,18 +43,18 @@ del_flag
 reg_date
 }
 
-entity "カテゴリマスタ" as category <m_category>
-<<M,MASTER_MARK_COLOR>>{
+entity "カテゴリマスタ"<m_category><<M,DDAA00>>{
 +category_ic[PK]
 --
 name
 reg_date
 }
+}
 
-m_customers |o-o{ d_purchase 
-d_purchase ||-{ d_purchase_date 
-d_purchase_date }--|| m_items 
-m_category ||-o{ m_items 
+顧客マスタ |o-o{ 購入テーブル
+購入テーブル ||-{ 購入詳細テーブル 
+購入詳細テーブル }--|| 商品マスタ
+商品マスタ ||-o{ カテゴリマスタ
 
 @enduml
 ```
