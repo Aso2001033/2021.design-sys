@@ -1,3 +1,4 @@
+```puml
 @startuml
 entity "顧客マスタ" as customer <m_customers>
 <<M,MASTER_MARK_COLOR>>{
@@ -56,3 +57,6 @@ m_customers |o-o{ d_purchase
 d_purchase ||-{ d_purchase_date 
 d_purchase_date }--|| m_items 
 m_category ||-o{ m_items 
+
+@enduml
+```
