@@ -1,6 +1,6 @@
 ```puml
 @startuml
-package "" as target_system{
+package "ECサイト" as target_system{
 
 entity "顧客マスタ"<m_customers><<M,DDAA00>>{
  +customer_code[PK]
