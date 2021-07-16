@@ -32,7 +32,7 @@ price
 num
 }
 
-entity "商品マスタ"<m_items><<DDAA00>>{
+entity "商品マスタ"<m_items><<M,DDAA00>>{
 +item_code[PK]
 --
 item_name
