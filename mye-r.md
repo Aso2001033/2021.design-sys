@@ -51,7 +51,7 @@ name
 reg_date
 }
 
-entity "ポイントテーブル"<><<T,00AADD>>{
+entity "ポイントテーブル"<d_point><<T,00AADD>>{
 +price[PK]
 --
 point[FK]
