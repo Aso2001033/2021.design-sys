@@ -51,10 +51,21 @@ name
 reg_date
 }
 
+entity "ポイントテーブル"<><<T,00AADD>>{
++price[PK]
+--
+point[FK]
+name
+num
+reg_date
+del_flag
+}
+
 }
 
 顧客マスタ |o-ri-o{ 購入テーブル
 購入テーブル ||-ri-{ 購入詳細テーブル 
+購入詳細テーブル }-ri-|{ ポイントテーブル
 購入詳細テーブル }-do-|| 商品マスタ
 商品マスタ }o-le-|| カテゴリマスタ
 
