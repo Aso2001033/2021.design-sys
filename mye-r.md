@@ -6,6 +6,7 @@ package "ECサイト" as target_system{
 entity "顧客マスタ"<m_customers><<M,DDAA00>>{
 +customer_code[PK]
 --
+point
 pass
 name
 address
@@ -65,8 +66,8 @@ del_flag
 
 顧客マスタ |o-ri-o{ 購入テーブル
 購入テーブル ||-ri-{ 購入詳細テーブル 
-購入詳細テーブル }-ri-|{ ポイントテーブル
 購入詳細テーブル }-do-|| 商品マスタ
+商品マスタ}-ri-{ポイントテーブル
 商品マスタ }o-le-|| カテゴリマスタ
 
 @enduml
