@@ -2,9 +2,6 @@
 ## ER図
 [ER図はこちら](https://github.com/Aso2001033/2021sys-design/blob/main/mye-r.md "ER図はこちら")
 
-## 設計図
-[設計図](https://www.figma.com/file/Pqxi2y44YTWSKGWWfdttzX/Mydesign "設計図")
-
 ## DBテーブルカラム詳細一覧
 
 ### 購入テーブル(d_purchase)
