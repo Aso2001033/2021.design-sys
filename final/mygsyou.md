@@ -3,7 +3,7 @@
 ### プロトタイプは以下のリンク先
 [プロトタイプ](https://www.figma.com/file/Pqxi2y44YTWSKGWWfdttzX/Mydesign)
 *****
-<img src = "image.png" width = "300">
+<img src = "123.png" width = "300">
 
 *****
 
