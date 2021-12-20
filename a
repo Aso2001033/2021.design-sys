@@ -1,82 +1,25 @@
-const someComponent = Vue.component('some-component',{
-    data(){
-        return{
-            title: 'hello world'
-        };
-    },
-    template:`<div class = "title-label">{{title}}</div>`
-});
-const imageThumbnail = Vue.component('image-thumbnail',{
-    props:{
-        path:{
-            type: String,
-            default: ''
-        }
-    },
-    template:`<div class = "img-box" 
-                :style = "{backgroundImage: 'url('+path+')'}" 
-                @click = "$emit('clickimage')"></div>`
-});
-
-const modal = Vue.component('modal',{
-    props:{
-        isShown:{
-            type: Boolean,
-            default: false
-        },
-        imagePath:{
-            type: String,
-            default: ''
-        }
-    },
-    template: `<div v-if = "isShown" class = "modal" @click = "$emit('close')">
-                <img class = "modal-img :src = "imagePath alt = "selectedImage /></div>`
-});
-
-const app = new Vue({
-    el: '#app',
-    components:{
-        'image-thumbnail': imageThumbnail,
-        modal
-    },
-    data(){
-        return{
-            isShown: false,
-            selectedImage: '',
-            images:[{
-                path: './img/C.png',
-            },{
-                path: './img/D.png',
-            },{
-                path: './img/G.png',
-            },{
-                path: './img/J.png',
-            },{
-                path: './img/M.png',
-            },{
-                path: './img/N.png',
-            },{
-                path: './img/P.png',
-            },{
-                path: './img/R.png',
-            },{
-                path: './img/S.png'
-            }]
-        };
-    },
-    methods:{
-        onSelectImage(path){
-            this.setImage(path);
-            this.openModal();
-        },
-        openModal(){
-            this.isShown = true;
-        },
-        closeModel(){
-            this.isShown = false;
-        },
-        setImage(path){
-            this.selectedImage = path;
-        }
-    }
-});
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset = "utf-8">
+    <title></title>
+    <link rel = "stylesheet" href = "css/ex_style.css">
+</head>
+<body>
+    <div id = "app">
+        <div class = "wrap">
+            <image-thumbnail
+                v-for = "(img,i) in images"
+                :key = "i"
+                :path = "img.path"
+                @clickimage = "onSelectImage(img.path)">
+            </image-thumbnail>
+            <transition name = "fade">
+                <modal :is-shown = "isShown" :image-path = "selecedtImage" @close = "closeModal" />
+            </transition>
+        </div>
+    </div>
+    <script src = "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./script/ex_script.js"></script>
+</body>
+</html>
