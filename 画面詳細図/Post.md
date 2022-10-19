@@ -3,8 +3,8 @@
 [プロトタイプ](https://www.figma.com/file/zs6zUaWOpgckQPl3Hi4xAC/Untitled?node-id=0%3A1)
 *****
 
-<img src="./img/Post.png">
-<img src="./img/Post2.png">
+<img src="./img/Post.png" width="500">
+<img src="./img/Post2.png" width="500">
 *****
 補足：対応DBの列は設計後、〇を対応するテーブル・カラム名に差し替えること。
 
