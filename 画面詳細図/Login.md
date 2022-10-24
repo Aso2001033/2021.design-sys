@@ -5,6 +5,7 @@
 
 <img src="./img/Login.png">
 <img src="./img/NewLogin.png">
+<img src="./img/Login2.png">
 *****
 補足：対応DBの列は設計後、〇を対応するテーブル・カラム名に差し替えること。
 
